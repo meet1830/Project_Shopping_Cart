@@ -9,7 +9,7 @@ const NavbarTop = () => {
         <div id='navbar-top-container'>
             {categories.map((item, index) => (
                 <p>
-                    <Link className='nav-top-link' activeClass="active-top" smooth spy offset={-225} to={categoriesId[index]}>
+                    <Link className='nav-top-link' activeClass="active-top" smooth spy offset={-243} to={categoriesId[index]}>
                         <center><i className={"fa-solid " + categoriesIcons[index]}></i></center>
                         {item}
                     </Link>
