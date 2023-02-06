@@ -20,8 +20,10 @@ const Context = ({ children }) => {
 
   const categoriesId = categories.map((item) => item.split(" ").join(""));
 
+  const categoriesIcons = ["fa-carrot", "fa-candy-cane", "fa-cake-candles", "fa-fish-fins", "fa-egg", "fa-ice-cream", "fa-drumstick-bite", "fa-utensils", "fa-utensils", "fa-utensils", "fa-utensils", "fa-utensils", "fa-utensils", "fa-utensils", "fa-utensils", "fa-utensils", "fa-utensils"];
+
   return (
-    <Cart.Provider value={{ cart, setCart, products, categories, categoriesId }}>
+    <Cart.Provider value={{ cart, setCart, products, categories, categoriesId, categoriesIcons }}>
       {children}
     </Cart.Provider>
   );
