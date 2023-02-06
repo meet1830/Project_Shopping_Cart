@@ -1,5 +1,4 @@
-# Project_Shopping_Cart     
-Deployment link: https://634717ef4ed2b71f219dd1c8--zippy-gumption-2cd874.netlify.app/     
+# Project_Shopping_Cart
 
 # Getting Started with Create React App
 
