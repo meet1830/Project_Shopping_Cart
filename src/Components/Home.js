@@ -1,19 +1,19 @@
 import React from "react";
-import { faker } from "@faker-js/faker";
-import SingleProduct from "./SingleProduct";
+import CategoryProducts from "./CategoryProducts";
 import { CartState } from "../Context";
-
-faker.seed(100);
+import NavbarSide from "./NavbarSide";
 
 const Home = () => {
-  const { products } = CartState();
+  const { categories } = CartState();
 
   return (
-    <div className="productContainer">
-      <span style={{ fontSize: 30 }}>Products Page</span>
-      <div className="productContainer">
-        {products.map((prod) => (
-          <SingleProduct prod={prod} key={prod.id} />
+    <div className="home-container">
+      <div id="navbar-side">
+        <NavbarSide />
+      </div>
+      <div id="home-products">
+        {categories.map((item, index) => (
+          <CategoryProducts key={index} category={item} idx={index + 1} />
         ))}
       </div>
     </div>

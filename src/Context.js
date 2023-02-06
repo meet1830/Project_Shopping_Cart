@@ -7,7 +7,7 @@ faker.seed(100);
 const Context = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const productsArray = [...Array(20)].map((p) => ({
+  const productsArray = [...Array(100)].map((p) => ({
     id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
@@ -16,8 +16,12 @@ const Context = ({ children }) => {
 
   const [products] = useState(productsArray);
 
+  let categories = ["Produce", "Prepared foods", "Canned foods and Soups", "Bakery", "Dairy and Eggs", "Frozen", "Meat and Seafood"];
+
+  const categoriesId = categories.map((item) => item.split(" ").join(""));
+
   return (
-    <Cart.Provider value={{ cart, setCart, products }}>
+    <Cart.Provider value={{ cart, setCart, products, categories, categoriesId }}>
       {children}
     </Cart.Provider>
   );

@@ -4,12 +4,18 @@ import { CartState } from "../Context";
 const SingleProduct = ({ prod }) => {
   const { cart, setCart } = CartState();
 
+  function massMeasurement() {
+    const mass = Math.floor(Math.random() * 25) + 1;;
+    return mass <= 10 ? `${mass} lb` : `${mass} oz`
+  }
+
   return (
-    <div className="products">
+    <div className="product">
       <img src={prod.image} alt={prod.name} />
       <div className="productDesc">
-        <span style={{ fontWeight: 700 }}>{prod.name}</span>
-        <span>Rs. {prod.price}/-</span>
+        <p>${prod.price}</p>
+        <p>{prod.name}</p>
+        <p>{massMeasurement()}</p>
       </div>
 
       {cart.includes(prod) ? (
@@ -19,7 +25,7 @@ const SingleProduct = ({ prod }) => {
             setCart(cart.filter((c) => c.id !== prod.id));
           }}
         >
-          Remove from Cart
+          -
         </button>
       ) : (
         <button
@@ -28,7 +34,7 @@ const SingleProduct = ({ prod }) => {
             setCart([...cart, prod]);
           }}
         >
-          Add to Cart
+          +
         </button>
       )}
     </div>
