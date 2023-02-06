@@ -6,8 +6,8 @@ const CategoryProducts = ({ category, idx }) => {
     const { products, categoriesId } = CartState();
 
     return (
-        <div className="product-category">
-            <h1 className={idx - 1 === 0 ? 'first-category-header' : ''} id={categoriesId[idx - 1]}>{category} <i className="fa-solid fa-angle-right"></i></h1>
+        <div id={categoriesId[idx - 1]} className="product-category">
+            <h1>{category} <i className="fa-solid fa-angle-right"></i></h1>
             <div className="product-container">
                 {products
                     .filter((item, index) => index >= (idx - 1) * 10 && index < idx * 10)
