@@ -4,18 +4,13 @@ import { CartState } from "../Context";
 const SingleProduct = ({ prod }) => {
   const { cart, setCart } = CartState();
 
-  function massMeasurement() {
-    const mass = Math.floor(Math.random() * 25) + 1;;
-    return mass <= 10 ? `${mass} lb` : `${mass} oz`
-  }
-
   return (
     <div className="product">
       <img src={prod.image} alt={prod.name} />
       <div className="productDesc">
         <p>${prod.price}</p>
         <p>{prod.name}</p>
-        <p>{massMeasurement()}</p>
+        <p>{prod.weight}</p>
       </div>
 
       {cart.includes(prod) ? (

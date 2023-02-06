@@ -7,11 +7,17 @@ faker.seed(200);
 const Context = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  function massMeasurement() {
+    const mass = Math.floor(Math.random() * 25) + 1;;
+    return mass <= 10 ? `${mass} lb` : `${mass} oz`
+  }
+
   const productsArray = [...Array(200)].map((p) => ({
     id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
     image: faker.image.image(),
+    weight: massMeasurement()
   }));
 
   const [products] = useState(productsArray);

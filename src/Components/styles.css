@@ -23,7 +23,6 @@
   list-style: none;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 255, 128);
   height: 80px;
   margin-top: 0;
 }
@@ -70,6 +69,7 @@
   padding: 0.5rem;
   margin: 0.5rem;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 #navbar-top-container {
@@ -96,7 +96,6 @@
 }
 
 #navbar-top-container p {
-  /* border: solid red; */
   padding: 1rem 0;
 }
 
@@ -104,6 +103,7 @@
   display: inline-block;
   width: 7rem;
   text-align: center;
+  cursor: pointer;
 }
 
 .active {
@@ -117,15 +117,25 @@
   font-weight: bold;
 }
 
+.active-top i {
+  border: solid red;
+}
+
 @media only screen and (max-width: 768px) {
   #home-products {
     margin-left: 0rem;
+  }
+  .nav {
+    background-color: white;
   }
 }
 
 @media only screen and (min-width: 768px) {
   #home-products {
     margin-left: 11rem;
+  }
+  .nav {
+    background-color: rgb(255, 255, 128);
   }
 }
 
